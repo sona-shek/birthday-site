@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday 🎂</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+color:white;
+overflow:hidden;
+}
+
+.page{display:none;opacity:0;transition:0.6s;}
+.active{display:block;opacity:1;}
+
+.container{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* CARD */
+.card{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(10px);
+border-radius:20px;
+padding:20px;
+width:90%;
+max-width:350px;
+text-align:center;
+}
+
+/* BUTTON */
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:15px;
+margin-top:12px;
+font-size:16px;
+cursor:pointer;
+}
+
+#openBtn{background:white;color:#ff4b5c;transition:0.3s;}
+#ignoreBtn{background:rgba(255,255,255,0.3);color:white;}
+#openText{display:block;font-size:13px;margin-top:5px;}
+
+/* PAGE 3 */
+.scroll-container{
+  height:100vh;
+  overflow-y:auto;
+  padding:20px;
+  padding-bottom:120px; /* 🔥 IMPORTANT */
+}
+.message-box button{
+  margin-top:20px;
+}
+
+.message-box{
+background:rgba(255,255,255,0.15);
+padding:20px;
+border-radius:15px;
+line-height:1.7;
+}
+
+.fade-text{
+opacity:0;
+transform:translateY(20px);
+transition:1s;
+}
+.fade-text.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* IMAGE */
+.image-page{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+.image-row{
+display:flex;
+gap:20px;
+align-items:center;
+}
+.image-row img{
+width:150px;
+height:220px;
+border-radius:15px;
+}
+
+.right-content{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+.heart{
+  position:fixed;
+  bottom:-20px;
+  animation:floatUp 6s linear infinite;
+  pointer-events:none;
+}
+
+@keyframes floatUp{
+  from{transform:translateY(0);}
+  to{transform:translateY(-110vh);}
+}
+
+@media(max-width:600px){
+.image-row{flex-direction:column;}
+.image-row img{width:70%;height:auto;}
+}
+
+/* SLIDES */
+.slideshow-container{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+#mediaContainer img{
+width:90%;
+max-width:350px;
+border-radius:15px;
+}
+
+#caption{
+margin-top:15px;
+font-size:18px;
+text-align:center;
+}
+
+/* VIDEO */
+.video-container{
+width:100%;
+height:100vh;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+.video-container video{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* FINAL GLOW */
+.glow-text{
+animation:glow 2s infinite alternate;
+}
+@keyframes glow{
+from{text-shadow:0 0 10px #fff,0 0 20px #ff4b5c;}
+to{text-shadow:0 0 20px #fff,0 0 30px #ff7eb3;}
+}
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+<source src="music.mp3">
+</audio>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+<div class="container">
+<div class="card">
+<h2>Hey Aathif 🎂</h2>
+
+<button id="openBtn" onclick="start()">
+Open it
+<span id="openText"></span>
+</button>
+
+<button id="ignoreBtn" onclick="moveButton()">Ignore 🙄</button>
+</div>
+</div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+<div class="container">
+<div class="card">
+
+<h2>I know you like me 😏💖</h2>
+<p>mah mah mah 😌 <br> come let’s gooooooo 😎🔥</p>
+<button onclick="nextPage(3)">Continue ➡️</button>
+</div>
+</div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+  <div class="scroll-container">
+    <div class="message-box">
+
+      <h2 class="fade-text">💖 Happy Birthday 💖</h2>
+
+      <p class="fade-text">
+        Okay listen… I’m not going to be too emotional 😒  
+        but I still have to say this.
+      </p>
+
+      <p class="fade-text">
+        You’re honestly one of the most annoying people I know…  
+        but somehow also my favourite 😌
+      </p>
+
+      <p class="fade-text">
+        Life actually feels nicer with you around 💖  
+        (don’t get used to hearing this 😏)
+      </p>
+
+      <p class="fade-text">
+        You irritate me, tease me, act like a fraud sometimes 😂  
+        but still… I wouldn’t remove you from my life.
+      </p>
+
+      <p class="fade-text">
+        And yeah… before you get too happy 😒  
+        all those names I call you —  
+        fraud, idiot, isuku, darlzzz, porukki, myruuu, venna 😤  
+        those are my nicknames for you… so don’t overthink 😏
+      </p>
+
+      <p class="fade-text">
+        But still… my most favourite is  
+        <b>STADIIIIII</b> 😌💖
+      </p>
+
+      <p class="fade-text">
+        I hate you for not showing him…  
+        engala ne pirika pakura 😒  
+        seri vidu… I’ll deal with you later.
+      </p>
+
+      <p class="fade-text">
+        Sometimes I am rude… sometimes we fight a lot…  
+        sometimes I act like I don’t care 😒  
+        but that doesn’t mean I hate you.
+      </p>
+
+      <p class="fade-text">
+        I’ll always fight <b>for you</b>… not against you.  
+        your time varumbodhu I’ll be there.  
+        I hope you know that.
+      </p>
+
+      <p class="fade-text">
+        Honestly… I don’t know why…  
+        but I’m really happy for this birthday.  
+        idk… it just feels special 💖
+      </p>
+
+      <p class="fade-text">
+        So yeah… you matter.  
+        Don’t act too proud after reading this 😒
+      </p>
+
+      <p class="fade-text">
+        Enjoy your day… and don’t do anything too stupid 😤  
+        just celebrate properly.
+      </p>
+
+      <p class="fade-text">
+        May Allah bless you with everything good in life ✨
+      </p>
+
+      <p class="fade-text"><b>Happy Birthday 😌💖</b></p>
+
+   
+
+    </div>
+  </div>
+</div>
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+<div class="image-page">
+<div class="image-row">
+<img src="img1.jpeg">
+<div>
+<h3>Happyyyy Birthdayyyy 🎉</h3>
+<button onclick="nextPage(5)">Next</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="page5">
+<div class="image-page">
+<div class="image-row">
+<img src="img2.png">
+<div>
+<h3>Stadiiiiii 😎</h3>
+<button onclick="goSlides()">Next polam</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- PAGE 6 -->
+<div class="page" id="page6">
+<div class="slideshow-container">
+<div id="mediaContainer"></div>
+<p id="caption"></p>
+</div>
+</div>
+
+<!-- PAGE 7 -->
+<div class="page" id="page7">
+<div class="video-container">
+<video id="finalVideo"  playsinline>
+<source src="video.mp4">
+</video>
+</div>
+</div>
+
+<!-- PAGE 8 -->
+<div class="page" id="page8">
+<div class="container">
+<h2 class="glow-text">💖 Happiest Birthday 💖</h2>
+<h3 class="glow-text">💖 chamatha nala paiyana irukanum cheriyaa 💖</h3>
+<h3 class="glow-text">💖 mah mah mah 💖</h3>
+<h3 class="glow-text">💖 tataaa 💖</h3>
+</div>
+</div>
+
+<script>
+
+function nextPage(n){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById("page"+n).classList.add('active');
+
+  // PAGE 3 ANIMATION + AUTO NEXT
+  if(n==3){
+    let texts=document.querySelectorAll(".fade-text");
+
+    texts.forEach((el,i)=>{
+      setTimeout(()=>{
+        el.classList.add("show");
+      }, i*800);
+    });
+
+    // ⏱ calculate total animation time
+    let totalTime = texts.length * 800;
+
+    // ➡️ after animation + 3 sec → go next
+    setTimeout(()=>{
+      nextPage(4);
+    }, totalTime + 3000);
+  }
+}
+
+function start(){
+document.getElementById("bgMusic").play();
+nextPage(2);
+}
+
+/* PAGE 1 */
+let scale=1,count=0;
+function moveButton(){
+let btn=document.getElementById("ignoreBtn");
+let openBtn=document.getElementById("openBtn");
+let text=document.getElementById("openText");
+
+btn.style.position="absolute";
+btn.style.left=Math.random()*70+"vw";
+btn.style.top=Math.random()*70+"vh";
+
+scale+=0.2;
+openBtn.style.transform=`scale(${scale})`;
+
+let msgs=["😏","idha click pannu","naa dha solren la","adingg 😂","panuuuu 😤"];
+text.innerHTML=msgs[Math.min(count,msgs.length-1)];
+count++;
+}
+setInterval(()=>{
+  let h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="💖";
+
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=(15+Math.random()*25)+"px";
+
+  document.body.appendChild(h);
+
+  setTimeout(()=>h.remove(),6000);
+},300);
+
+/* SLIDES */
+let slides=[
+{src:"slide1.png", text:"Emmadi evlo adakama irukan 😏💖"},
+{src:"slide2.jpeg", text:"Chee apdi pakadhaaa 🙈😒"},
+{src:"slide3.jpeg", text:"Paruthi Veeran nu nenapu 😎🔥"},
+{src:"slide4.jpeg", text:"Avlodha aalu flatuuuu 😏😂"},
+{src:"slide5.jpeg", text:"Ivana vachikituuuuu 😤"},
+{src:"slide6.jpeg", text:"Vaa daa enaku edhavadhu vangi thaa 😌🛍️"},
+{src:"slide7.jpeg", text:"Iyooo iluka kuda mudilaye ivanaa 😂"},
+{src:"slide8.jpeg", text:"Setai senja ipdidha 😒"},
+{src:"slide9.jpeg", text:"Dei dei nalavan madhiri nadikadha daa 😂"},
+{src:"slide10.jpeg", text:"Acho vekamss coming yaa 🙈💖"},
+{src:"slide11.jpeg", text:"Chaa evlo pasam 😌❤️"},
+{src:"slide12.jpeg", text:"Nanum height dha 😎📏"},
+{src:"slide13.jpeg", text:"Trip polamaa 😏✈️"},
+{src:"slide14.jpeg", text:"Epdi pakraan paru 😒👀"},
+{src:"slide15.jpeg", text:"Acho kozhandaiku mudi ila 😂👶"},
+{src:"slide16.jpeg", text:"❤️💖💕"}
+];
+
+let i=0;
+
+function goSlides(){
+nextPage(6);
+i=0;
+showSlide();
+}
+
+function showSlide(){
+let c=document.getElementById("mediaContainer");
+let t=document.getElementById("caption");
+
+if(i>=slides.length){
+setTimeout(()=>goVideo(),1000);
+return;
+}
+
+c.innerHTML=`<img src="${slides[i].src}">`;
+t.innerText=slides[i].text;
+
+i++;
+setTimeout(showSlide,3000);
+}
+
+function goVideo(){
+  nextPage(7);
+
+  // pause bg music
+  document.getElementById("bgMusic").pause();
+
+  let v=document.getElementById("finalVideo");
+
+  v.currentTime = 0; // reset
+  v.play();
+
+  v.onended=function(){
+    nextPage(8);
+  }
+}
+v.muted = true; // allow autoplay
+v.play();
+
+setTimeout(()=>{
+  v.muted = false;
+}, 500);
+
+
+
+</script>
+
+</body>
+</html>
